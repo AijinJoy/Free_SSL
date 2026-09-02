@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free SSL Certificate Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 100px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        h1 {
+            color: #222;
+        }
+
+        p {
+            color: #666;
+        }
+
+        input {
+            width: 70%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 14px 22px;
+            margin-left: 8px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 25px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔒 Free SSL Certificate Generator</h1>
+
+        <p>
+            Generate a free SSL certificate for your domain.
+        </p>
+
+        <input
+            type="text"
+            id="domain"
+            placeholder="example.com"
+        >
+
+        <button onclick="generateSSL()">
+            Generate SSL
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        function generateSSL() {
+
+            const domain = document.getElementById("domain").value;
+
+            if (!domain) {
+                document.getElementById("result").innerHTML =
+                    "Please enter a domain.";
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Checking domain: <strong>" + domain + "</strong>";
+        }
+    </script>
+
+</body>
+</html>
